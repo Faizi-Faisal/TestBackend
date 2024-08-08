@@ -31,8 +31,8 @@ const PropertiesSection = () => {
 
  useEffect(() => {
   socketRef.current = io('https://ser-dep.vercel.app', {
-    transports: ['websocket', 'polling'],
-    withCredentials: true
+    transports: ['websocket', 'polling'], // Ensure WebSocket transport is specified
+    withCredentials: true,
   });
 
   socketRef.current.on('connect', () => {
@@ -53,6 +53,7 @@ const PropertiesSection = () => {
     socketRef.current.disconnect();
   };
 }, []);
+
 
   useEffect(() => {
     if (hasMore) {
