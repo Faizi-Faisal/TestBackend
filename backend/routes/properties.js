@@ -9,6 +9,11 @@ router.get('/', async (req, res) => {
   const skip = (page - 1) * limit;
 
   try {
+    // Validate page and limit
+    if (page < 1 || limit < 1) {
+      return res.status(400).json({ message: 'Page and limit must be positive integers' });
+    }
+
     const properties = await Property.find().skip(skip).limit(limit).lean();
     const total = await Property.countDocuments();
     res.json({ properties, total });
