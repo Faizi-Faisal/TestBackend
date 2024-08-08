@@ -1,6 +1,6 @@
 const express = require('express');
 const http = require('http');
-const socketIo = require('socket.io');
+const socketIo = require('socket.io')(http,{cors: {origin: "*"}});
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
