@@ -30,7 +30,7 @@ const PropertiesSection = () => {
   };
 
   useEffect(() => {
-    socketRef.current = io('http://localhost:5000'); // Replace with backend URL
+    socketRef.current = io('https://ser-dep.vercel.app/'); // Replace with backend URL
 
     socketRef.current.on('connect_error', (err) => {
       setError(err.message);
