@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import axios from 'axios';
 import './PropertiesSection.css';
-import { io } from 'socket.io-client';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBath, faShare, faWifi } from '@fortawesome/free-solid-svg-icons';
 
@@ -13,7 +13,6 @@ const PropertiesSection = () => {
   const [error, setError] = useState(null);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
-  const socketRef = useRef(null);
   const navigate = useNavigate();
 
   const getPreferredTagClass = (preferredBy) => {
@@ -29,48 +28,21 @@ const PropertiesSection = () => {
     }
   };
 
- useEffect(() => {
-  socketRef.current = io('https://ser-dep.vercel.app', {
-    transports: ['websocket', 'polling'],
-    withCredentials: true,
-  });
-
-  socketRef.current.on('connect', () => {
-    console.log('Connected to WebSocket server:', socketRef.current.id);
-  });
-
-  socketRef.current.on('connect_error', (err) => {
-    console.error('Connection error:', err.message);
-    setError(err.message);
-    setLoading(false);
-  });
-
-  socketRef.current.on('disconnect', (reason) => {
-    console.log('Disconnected from WebSocket server:', reason);
-  });
-
-  return () => {
-    socketRef.current.disconnect();
-  };
-}, []);
-
-  return () => {
-    socketRef.current.disconnect();
-  };
-}, []);
-
-
   useEffect(() => {
-    if (hasMore) {
-      socketRef.current.emit('getProperties', { page, limit: 10 });
-
-      socketRef.current.on('propertiesData', ({ properties: newProperties, total }) => {
-        setProperties((prevProperties) => [...prevProperties, ...newProperties]);
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`https://ser-dep.vercel.app/api/properties/paginated?page=${page}&limit=10`);
+        setProperties(prevProperties => [...prevProperties, ...response.data.properties]);
+        setHasMore(response.data.properties.length > 0);
         setLoading(false);
-        if (newProperties.length < 10) {
-          setHasMore(false);
-        }
-      });
+      } catch (error) {
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+
+    if (hasMore) {
+      fetchData();
     }
   }, [page]);
 
