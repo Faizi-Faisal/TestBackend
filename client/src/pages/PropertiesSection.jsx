@@ -29,21 +29,30 @@ const PropertiesSection = () => {
     }
   };
 
-  useEffect(() => {
-    socketRef.current = io('https://ser-dep.vercel.app', {
-      transports: ['websocket', 'polling'], // Ensure WebSocket transport is specified
-      withCredentials: true
-    }); // Replace with backend URL
+ useEffect(() => {
+  socketRef.current = io('https://ser-dep.vercel.app', {
+    transports: ['websocket', 'polling'],
+    withCredentials: true
+  });
 
-    socketRef.current.on('connect_error', (err) => {
-      setError(err.message);
-      setLoading(false);
-    });
+  socketRef.current.on('connect', () => {
+    console.log('Connected to WebSocket server:', socketRef.current.id);
+  });
 
-    return () => {
-      socketRef.current.disconnect();
-    };
-  }, []);
+  socketRef.current.on('connect_error', (err) => {
+    console.error('Connection error:', err.message);
+    setError(err.message);
+    setLoading(false);
+  });
+
+  socketRef.current.on('disconnect', (reason) => {
+    console.log('Disconnected from WebSocket server:', reason);
+  });
+
+  return () => {
+    socketRef.current.disconnect();
+  };
+}, []);
 
   useEffect(() => {
     if (hasMore) {
