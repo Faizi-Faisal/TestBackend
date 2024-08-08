@@ -14,21 +14,21 @@ connectDB();
 
 const app = express();
 const server = http.createServer(app);
+
 const io = socketIo(server, {
   cors: {
-    origin: "https://client-dp-nine.vercel.app/", // Replace with frontend URL
+    origin: "https://client-dp-nine.vercel.app", // Replace with your frontend URL
     methods: ["GET", "POST"]
   }
 });
 
 // Use CORS middleware
 app.use(cors({
-  origin: "https://client-dp-nine.vercel.app/", // Replace with frontend URL
+  origin: "https://client-dp-nine.vercel.app", // Replace with your frontend URL
 }));
 
 app.use(express.json());
 app.use('/api/properties', propertyRoutes);
-
 
 io.on('connection', (socket) => {
   console.log('New client connected');
