@@ -53,18 +53,19 @@ const PropertyDetail = () => {
         ))}
       </Carousel>
       <div className='pre-def-aminities-card row'>
-        <p className='pre-def-wifi'><FontAwesomeIcon icon={faWifi} /> Wifi</p>
-        <p className='pre-def-wash'><FontAwesomeIcon icon={faBath} /> Attached Washroom</p>
-      </div>
-      <div className='listingsectionproperty-mobile-Detailed'>
-        <div className='column'>
-          <p className='listingsectionproperty-text-mobile-Detailed'>Starting from</p>
-          <p className='listingsectionproperty-price-Detailed'>₹ {property.price} <span className='permonth-card-largescreen'>/month</span></p>
-        </div>
-        <button className='listingsectionproperty-button-Detailed'>Request Callback</button>
-      </div>
-    </div>
-  );
-};
+         <p className='pre-def-wifi'><FontAwesomeIcon icon={faWifi} /> Wifi</p>
+           <p className='pre-def-wash'><FontAwesomeIcon icon={faBath} /> Attached Washroom</p>
+         </div>
+         <div className='listingsectionproperty-mobile-Detailed'>
+           <div className='column'>
+             <p className='listingsectionproperty-text-mobile-Detailed'>Starting from</p>
+             <p className='listingsectionproperty-price-Detailed'>₹ {property.price} <span className='permonth-card-largescreen'>/month</span></p>
+           </div>
+           <button className='listingsectionproperty-button-Detailed'>Request Callback</button>
+         </div>
+       </div>
+     );
+   };
 
-export default PropertyDetail;
+   export default PropertyDetail;
+ 
