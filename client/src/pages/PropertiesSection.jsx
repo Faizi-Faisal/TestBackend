@@ -32,7 +32,7 @@ const PropertiesSection = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://ser-dep.vercel.app/api/properties/paginated?page=${page}&limit=${limit}`);
+        const response = await axios.get(`https://ser-dep.vercel.app/api/properties?page=${page}&limit=${limit}`);
         setProperties(prevProperties => [...prevProperties, ...response.data.properties]);
         setHasMore(response.data.properties.length > 0);
         setLoading(false);
