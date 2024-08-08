@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Property = require('../models/Property');
 
+// Get properties with pagination
 router.get('/', async (req, res) => {
   const page = parseInt(req.query.page) || 1;
   const limit = parseInt(req.query.limit) || 10;
@@ -17,6 +18,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+// Get a single property by ID
 router.get('/:id', async (req, res) => {
   const { id } = req.params;
 
