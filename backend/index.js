@@ -19,14 +19,14 @@ const io = socketIo(server, {
   cors: {
     origin: "https://client-dp-nine.vercel.app", // Replace with frontend URL
     methods: ["GET", "POST"],
-    credentials: true
-  }
+    credentials: true,
+  },
 });
 
 // Use CORS middleware
 app.use(cors({
   origin: "https://client-dp-nine.vercel.app", // Replace with frontend URL
-  credentials: true
+  credentials: true,
 }));
 
 app.use(express.json());
@@ -51,7 +51,6 @@ io.on('connection', (socket) => {
     console.log('Client disconnected:', reason);
   });
 });
-
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
