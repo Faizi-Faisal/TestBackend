@@ -1,0 +1,362 @@
+.exploreTopPgs {
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    text-align: start;
+    color: rgb(66, 66, 66);
+  }
+  
+  .exploreTopPgsBanglore {
+    color: rgb(66, 66, 66);
+  }
+  
+  .containerlistedSection {
+    margin-top: 20px;
+  }
+  
+  .listingsectionproperty-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  
+  .listingsectionproperty-column {
+    flex: 0 0 45%; /* Adjusted to allow two columns with some margin */
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
+    margin-right: 5%; /* Add margin between columns */
+  }
+  
+  .listingsectionproperty-card {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 19px 40px #CFC9DD;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .listingsectionproperty-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+  
+  .listingsectionproperty-content {
+    padding: 10px;
+    text-align: start;
+    padding: 20px;
+  }
+  
+  .listingsectionproperty-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .listingsectionproperty-subtitle {
+    font-size: 12px;
+    color: grey;
+    margin-top: -22px;
+    font-weight: 600;
+  }
+
+  .card-icon-share {
+    position: relative;
+    left: 300px;
+    top: -50px;
+    font-size: 24px;
+    color: #80AF81;
+    cursor: pointer;
+    transform: rotate(-30deg);
+    transition: transform 0.3s ease;
+  }
+  
+  .card-icon-share:hover {
+    transform: rotate(0deg); 
+    color: #508D4E;
+  }
+
+  .pre-def-aminities-card {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: -20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.pre-def-wifi {
+    background-color: #D6EFD8;
+    border-radius: 16px;
+    width: 70px;
+    text-align: center;
+    padding: 1px;
+    font-weight: 500;
+}
+
+.pre-def-wash {
+    background-color: #D6EFD8;
+    border-radius: 16px;
+    width: 190px;
+    text-align: center;
+    padding: 1px;
+    font-weight: 500;
+}
+  
+  .listingsectionproperty-price {
+    font-size: 18px;
+    color: rgb(35, 35, 35);
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+   
+  }
+  .listingsectionproperty-price-mobile {
+    display: none;
+  }
+  .permonth-card-largescreen {
+    font-size: 10px;
+    color: grey;
+  }
+  
+  .preferred-tag {
+    position: relative;
+    top: 50px;
+    left: 20px;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    z-index: 1000;
+    width: 70px;
+    text-align: center;
+  }
+  
+  .preferred-tag.boys {
+    background-color: rgb(25, 111, 198);
+  }
+  
+  .preferred-tag.girls {
+    background-color: rgb(212, 81, 103);
+  }
+  
+  .preferred-tag.unisex {
+    background-color: goldenrod;
+  }
+  
+  .listingsectionproperty-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3px;
+  }
+  
+  .listingsectionproperty-text-mobile {
+   
+    font-size: 10px;
+    color: rgb(51, 51, 51);
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    top: 10px;
+    
+  }
+  
+  .listingsectionproperty-button {
+    font-size: 16px;
+    font-weight: bold;
+    color: #508D4E;
+    background-color: #508d4e00;
+    border: 1px solid #508D4E;
+    padding: 10px;
+    border-radius: 22px;
+    cursor: pointer;
+    width: 50%;
+    height: 50px;
+    margin-left: 50px;
+    margin-right: 10px;
+  }
+  
+  .listingsectionproperty-button:hover {
+    background-color: #508D4E;
+    color: #fff;
+  }
+  
+  @media (min-width: 1024px) {
+    .listingsectionproperty-column {
+        flex: 0 0 30%; /* Adjust to three columns for larger screens */
+        margin-right: 3.33%; /* Adjust margin between columns */
+      }
+  }
+  
+  @media (max-width: 1024px) {
+    .listingsectionproperty-column {
+      flex: 0 0 45%; /* Adjust to two columns for medium screens */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .exploreTopPgs {
+      font-size: 16px;
+      font-weight: 500;
+      margin-top: 35px;
+      margin-bottom: 20px;
+      font-family: 'Poppins', sans-serif;
+      text-align: start;
+    }
+  
+  
+    .containerlistedSection {
+      margin-top: 5px;
+    }
+  
+    .listingsectionproperty-row {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+    .listingsectionproperty-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 1px;
+    font-family: 'Poppins', sans-serif;
+    }
+
+    .listingsectionproperty-subtitle {
+        font-size: 12px;
+        color: grey;
+        margin-top: -20px;
+        font-weight: 500;
+      }
+     
+    .card-icon-share {
+        position: relative;
+        left: 220px;
+        top: -40px;
+        font-size: 18px;
+        color: #80AF81;
+        cursor: pointer;
+        transform: rotate(-30deg);
+        transition: transform 0.3s ease;
+      }
+      
+      .card-icon-share:hover {
+        transform: rotate(0deg); 
+        color: #508D4E;
+      }
+
+      .pre-def-aminities-card {
+        display: flex;
+        flex-direction: row;
+        gap: 5px;
+        margin-top: -20px;
+        font-family: 'Poppins', sans-serif;
+        font-size: 10px;
+    }
+    
+    .pre-def-wifi {
+        background-color: #D6EFD8;
+        border-radius: 16px;
+        width: 50px;
+        text-align: center;
+        padding: 1px;
+        font-weight: 500;
+    }
+    
+    .pre-def-wash {
+        background-color: #D6EFD8;
+        border-radius: 16px;
+        width: 130px;
+        text-align: center;
+        padding: 1px;
+        font-weight: 500;
+    }
+
+    .pre-def-aminities-card {
+        display: flex;
+        flex-direction: row;
+    }
+  
+    .listingsectionproperty-price {
+      display: none;
+    }
+
+    .listingsectionproperty-price-mobile {
+      font-size: 16px;
+      color: rgb(35, 35, 35);
+      margin-top: 10px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+       
+      }
+  
+    .listingsectionproperty-column {
+        flex: 0 0 100%;
+        margin-bottom: 20px;
+        margin-right: 0; /* Remove margin for single column layout */
+      }
+  
+    .listingsectionproperty-card {
+      width: 100%;
+      margin-left: 0;
+    }
+  
+    .listingsectionproperty-image {
+      height: 200px;
+    }
+  
+    .listingsectionproperty-content {
+      width: 100%;
+      padding: 15px;
+    }
+  
+    .listingsectionproperty-text-mobile {
+   
+      font-size: 12px;
+      color: rgb(51, 51, 51);
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      top: 10px;
+        
+      }
+
+    .listingsectionproperty-price-mobile {
+        display: block;
+      }
+  
+    .listingsectionproperty-button {
+        font-size: 12px;
+        font-weight: bold;
+        color: #508D4E;
+        background-color: #508d4e00;
+        border: 1px solid #508D4E;
+        padding: 10px;
+        border-radius: 22px;
+        cursor: pointer;
+        width: 50%;
+        height: 40px;
+        margin-left: 0px;
+        margin-right: 30px;
+    }
+    .preferred-tag {
+        position: relative;
+        top: 40px;
+        left: 15px;
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: 12px;
+        font-size: 12px;
+        font-family: 'Poppins', sans-serif;
+        z-index: 1000;
+        width: 50px;
+        text-align: center;
+      }
+  }

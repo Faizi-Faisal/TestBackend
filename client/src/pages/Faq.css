@@ -1,0 +1,102 @@
+.Faq-section-title {
+    font-size: 26px;
+    font-weight: 600;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+    text-align: start;
+    color: rgb(66, 66, 66);
+  }
+
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    border: 1px solid rgba(68, 68, 68, 0.258);
+    border-radius: 16px;
+    box-shadow: 0 4px 28px rgba(0, 0, 0, 0.2);
+  }
+  
+  .faq-item {
+    display: flex;
+    margin-bottom: 20px;
+    opacity: 0; /* Initial state for fade-in effect */
+    transform: translateY(20px); /* Initial state for slide-in effect */
+    transition: opacity 0.5s, transform 0.5s; /* Smooth transition */
+  }
+  
+  .faq-item.visible {
+    opacity: 1; /* Final state for fade-in effect */
+    transform: translateY(0); /* Final state for slide-in effect */
+  }
+  
+  .faq-timeline {
+    position: relative;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .faq-circle {
+    width: 15px;
+    height: 15px;
+    background-color: #508D4E;
+    border-radius: 50%;
+    z-index: 1;
+    transform: translateX(-20px); /* Initial state for slide-in effect */
+    transition: transform 0.5s; /* Smooth transition */
+  }
+  
+  .faq-item.visible .faq-circle {
+    transform: translateX(0); /* Final state for slide-in effect */
+  }
+  
+  .faq-line {
+    width: 2px;
+    height: 100%;
+    background-color: #ccc;
+    position: absolute;
+    top: 20px;
+  }
+  
+  .faq-content {
+    padding-left: 20px;
+  }
+  
+  .faq-question {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 10px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .faq-answer {
+    font-size: 16px;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Media query for mobile devices */
+  @media (max-width: 768px) {
+
+    .Faq-section-title {
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 5px;
+        margin-bottom: 20px;
+        font-family: 'Poppins', sans-serif;
+        text-align: start;
+      }
+
+    .faq-question {
+      font-size: 14px;
+      font-weight: 600;
+    }
+  
+    .faq-answer {
+      font-size: 12px;
+    }
+  }
+  

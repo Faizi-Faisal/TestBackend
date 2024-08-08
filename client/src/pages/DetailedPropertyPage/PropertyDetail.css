@@ -1,0 +1,80 @@
+.property-detail-Detailed {
+    padding: 20px;
+  }
+  
+  .property-detail-Detailed h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .property-detail-Detailed p {
+    font-size: 18px;
+    color: grey;
+  }
+  
+  .pre-def-aminities-card-Detailed {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+  }
+  
+  .pre-def-wifi-Detailed {
+    background-color: #D6EFD8;
+    border-radius: 16px;
+    width: 70px;
+    text-align: center;
+    padding: 1px;
+    font-weight: 500;
+  }
+  
+  .pre-def-wash-Detailed {
+    background-color: #D6EFD8;
+    border-radius: 16px;
+    width: 190px;
+    text-align: center;
+    padding: 1px;
+    font-weight: 500;
+  }
+  
+  .listingsectionproperty-mobile-Detailed {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .listingsectionproperty-text-mobile-Detailed {
+    font-size: 14px;
+    color: rgb(51, 51, 51);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .listingsectionproperty-price-Detailed {
+    font-size: 18px;
+    color: rgb(35, 35, 35);
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+  }
+  
+  .listingsectionproperty-button-Detailed {
+    font-size: 16px;
+    font-weight: bold;
+    color: #508D4E;
+    background-color: #508d4e00;
+    border: 1px solid #508D4E;
+    padding: 10px;
+    border-radius: 22px;
+    cursor: pointer;
+    width: 50%;
+    height: 50px;
+  }
+  
+  .listingsectionproperty-button-Detailed:hover {
+    background-color: #508D4E;
+    color: #fff;
+  }
+  

@@ -1,0 +1,120 @@
+/* General Container Styling */
+.container {
+    margin: 0 70px;
+    padding: 0 15px;
+    font-family: 'Betm Rounded Medium', sans-serif;
+}
+
+.carouselSection {
+    margin-top: 25px;
+    position: relative;
+    border-radius: 15px;
+}
+
+.carousel-m {
+    border-radius: 15px;
+    overflow: hidden;
+    height: 420px; /* Adjust as needed */
+}
+
+/* Hide the default carousel indicators */
+.carousel-m .carousel-indicators {
+    display: none !important;
+}
+
+/* Custom Indicators */
+.customIndicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px; /* Adjust spacing as needed */
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    background: #D6EFD8;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.indicator.selected {
+    background: #508D4E;
+    border: 2px solid #1A5319;
+    width: 14px;
+    height: 14px;
+}
+
+.searchContainer {
+    height: 80px;
+    width: 80%;
+    border-radius: 25px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 35px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 10px;
+}
+
+.searchInput {
+    height: 70px;
+    width: 100%;
+    border: none;
+    border-radius: 20px;
+    padding: 0 10px;
+    outline: none;
+    box-sizing: border-box; /* Ensure padding is included in width */
+    font-size: 18px;
+}
+
+.searchInput::placeholder {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-align: left;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        margin: 0 10px;
+        padding: 0 0px;
+    }
+
+    .carousel-m {
+        height: 150px; /* Adjust height for mobile */
+        width: 100%;
+    }
+
+    .carousel-m .main-carousel img {
+        height: 150px;
+        width: 100%;
+    }
+
+    .customIndicators {
+        display: flex;
+        justify-content: center;
+        margin-top: 15px; /* Adjust spacing as needed */
+    }
+
+    .indicator {
+        width: 10px;
+        height: 10px;
+        background: #D6EFD8;
+        border-radius: 50%;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+
+    .indicator.selected {
+        background: #508D4E;
+        border: 2px solid #1A5319;
+        width: 12px;
+        height: 12px;
+    }
+}
