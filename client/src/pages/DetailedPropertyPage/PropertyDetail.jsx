@@ -16,7 +16,7 @@ const PropertyDetail = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`https://ser-dep.vercel.app/properties/${id}`);
+        const response = await axios.get(`https://ser-dep.vercel.app/api/properties/${id}`);
         setProperty(response.data);
       } catch (error) {
         setError(error.message);
