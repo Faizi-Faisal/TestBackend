@@ -33,9 +33,10 @@ app.use(express.json());
 app.use('/api/properties', propertyRoutes);
 
 io.on('connection', (socket) => {
-  console.log('New client connected');
+  console.log('New client connected:', socket.id);
 
   socket.on('getProperties', async ({ page, limit }) => {
+    console.log('Fetching properties:', { page, limit });
     const skip = (page - 1) * limit;
     try {
       const properties = await Property.find().skip(skip).limit(limit).lean();
@@ -46,10 +47,11 @@ io.on('connection', (socket) => {
     }
   });
 
-  socket.on('disconnect', () => {
-    console.log('Client disconnected');
+  socket.on('disconnect', (reason) => {
+    console.log('Client disconnected:', reason);
   });
 });
+
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
