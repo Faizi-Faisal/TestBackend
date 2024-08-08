@@ -30,7 +30,10 @@ const PropertiesSection = () => {
   };
 
   useEffect(() => {
-    socketRef.current = io('https://ser-dep.vercel.app/'); // Replace with backend URL
+    socketRef.current = io('https://ser-dep.vercel.app', {
+      transports: ['websocket', 'polling'], // Ensure WebSocket transport is specified
+      withCredentials: true
+    }); // Replace with backend URL
 
     socketRef.current.on('connect_error', (err) => {
       setError(err.message);
