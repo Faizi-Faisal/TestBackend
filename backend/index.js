@@ -17,14 +17,16 @@ const server = http.createServer(app);
 
 const io = socketIo(server, {
   cors: {
-    origin: "https://client-dp-nine.vercel.app", // Replace with your frontend URL
-    methods: ["GET", "POST"]
+    origin: "https://client-dp-nine.vercel.app", // Replace with frontend URL
+    methods: ["GET", "POST"],
+    credentials: true
   }
 });
 
 // Use CORS middleware
 app.use(cors({
-  origin: "https://client-dp-nine.vercel.app", // Replace with your frontend URL
+  origin: "https://client-dp-nine.vercel.app", // Replace with frontend URL
+  credentials: true
 }));
 
 app.use(express.json());
