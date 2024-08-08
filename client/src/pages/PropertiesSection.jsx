@@ -31,7 +31,7 @@ const PropertiesSection = () => {
 
  useEffect(() => {
   socketRef.current = io('https://ser-dep.vercel.app', {
-    transports: ['websocket', 'polling'], // Ensure WebSocket transport is specified
+    transports: ['websocket', 'polling'],
     withCredentials: true,
   });
 
@@ -48,6 +48,11 @@ const PropertiesSection = () => {
   socketRef.current.on('disconnect', (reason) => {
     console.log('Disconnected from WebSocket server:', reason);
   });
+
+  return () => {
+    socketRef.current.disconnect();
+  };
+}, []);
 
   return () => {
     socketRef.current.disconnect();
